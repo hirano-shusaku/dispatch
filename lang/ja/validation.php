@@ -132,4 +132,27 @@ return [
             'rule-name' => 'custom-message',
         ],
     ],
+    'attributes'=>[
+        'name'=>'名前',
+        'yomigana'=>'よみがな',
+        'company'=>'派遣会社',
+        'number'=>'派遣コード',
+        'depart'=>'所属部署',
+        'section'=>'所属セクション',
+        'job'=>'職種',
+        'firstday'=>'入社日',
+        'startday'=>'契約開始日',
+        'endday'=>'契約終了日',
+        'worktype'=>'雇用形態',
+        'cost'=>'派遣料',
+        'tcontent'=>'作業内容',
+        'aname'=>'派遣元担当者名',
+        'aemail'=>'派遣元担当者E-mailアドレス',
+        'confirmer'=>'更新確認者',
+        'cemail'=>'更新確認者E-mailアドレス',
+        'body'=>'備考',
+        'costmemo'=>'派遣料改定の日付と料金',
+        'pnumber'=>'プロジェクト番号',
+        'pname'=>'プロジェクト名'
+        ]
 ];
