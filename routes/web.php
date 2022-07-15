@@ -25,6 +25,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::resource('haken', HakenController::class);
+Route::get('haken/{haken}/ringi', [HakenController::class, 'ringi'])->name('haken.ringi');
 
 
 require __DIR__.'/auth.php';

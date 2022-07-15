@@ -199,4 +199,9 @@ class HakenController extends Controller
         
         return to_route('haken.index')->with('message', '派遣の方を削除しました');
     }
+    
+    public function ringi(Haken $haken)
+    {
+        return view('haken.ringi', compact('haken'));
+    }
 }

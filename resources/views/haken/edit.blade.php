@@ -87,7 +87,7 @@
                 
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
-                        <label for="worktype" class="font-semibold leading-none mt-4">雇用形態</label>
+                        <label for="worktype" class="font-semibold leading-none mt-4">派遣料算出方法（月額or時給など）</label>
                         <input type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" value="{{ old('worktype', $haken->worktype) }}">
                     </div>
                 </div>

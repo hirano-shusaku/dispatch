@@ -15,10 +15,14 @@
             
             <div class="flex justify-end mt-4">
                 <a href="{{route('haken.edit', $haken)}}"><x-button class="bg-teal-700 float-right">編集</x-button></a>
+                <div class="ml-4">
+                    <a href="{{route('haken.ringi', $haken)}}"><x-button class="bg-blue-700 float-right">稟議</x-button></a>
+                </div>
+                
                     <form method="post" action="{{route('haken.destroy', $haken)}}">
                         @csrf
                         @method('delete')
-                        <x-button class="bg-red-700 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-button>
+                        <x-button class="bg-red-800 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-button>
                     </form>
             </div>
             
@@ -96,7 +100,7 @@
                 
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col">
-                        <p>雇用形態</p>
+                        <p>派遣料算出方法（月額or時給など）</p>
                         <p class="text-lg text-gray-700 font-semibold">{{ $haken->worktype }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
                 </div>
