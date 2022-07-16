@@ -204,4 +204,9 @@ class HakenController extends Controller
     {
         return view('haken.ringi', compact('haken'));
     }
+    
+    public function shinki(Haken $haken)
+    {
+        return view('haken.shinki', compact('haken'));
+    }
 }

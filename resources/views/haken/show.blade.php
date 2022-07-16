@@ -18,6 +18,9 @@
                 <div class="ml-4">
                     <a href="{{route('haken.ringi', $haken)}}"><x-button class="bg-blue-700 float-right">稟議</x-button></a>
                 </div>
+                <div class="ml-4">
+                    <a href="{{route('haken.shinki', $haken)}}"><x-button class="bg-yellow-700 float-right">新規稟議</x-button></a>
+                </div>
                 
                     <form method="post" action="{{route('haken.destroy', $haken)}}">
                         @csrf
