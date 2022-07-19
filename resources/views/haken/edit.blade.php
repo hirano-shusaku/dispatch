@@ -106,6 +106,13 @@
                 
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
+                        <label for="conterm" class="font-semibold leading-none mt-4">契約期間</label>
+                        <input type="number" name="conterm" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="conterm" step="0.5" value="{{ old('conterm',$haken->conterm) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
                         <label for="cost" class="font-semibold leading-none mt-4">派遣料</label>
                         <input type="number" name="cost" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="cost" value="{{ old('cost', $haken->cost) }}">
                     </div>
@@ -187,6 +194,34 @@
                 <div class="w-full flex flex-col">
                     <label for="costmemo" class="font-semibold leading-none mt-4">派遣料改定の日付と料金</label>
                     <textarea name="costmemo" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="costmemo" cols="20" rows="2">{{ old('costmemo', $haken->costmemo) }}</textarea>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator1" class="font-semibold leading-none mt-4">稟議回覧者1</label>
+                        <input type="text" name="circulator1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator1" placeholder="稟議回覧者①を入力ください" value="{{ old('circulator1', $haken->circulator1) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator2" class="font-semibold leading-none mt-4">稟議回覧者2</label>
+                        <input type="text" name="circulator2" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator2" placeholder="稟議回覧者②を入力ください" value="{{ old('circulator2', $haken->circulator2) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator3" class="font-semibold leading-none mt-4">稟議回覧者3</label>
+                        <input type="text" name="circulator3" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator3" placeholder="稟議回覧者②を入力ください" value="{{ old('circulator3', $haken->circulator3) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator4" class="font-semibold leading-none mt-4">稟議回覧者4</label>
+                        <input type="text" name="circulator4" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator4" placeholder="稟議回覧者④を入力ください" value="{{ old('circulator3', $haken->circulator4) }}">
+                    </div>
                 </div>
     
                 <x-button class="mt-2">

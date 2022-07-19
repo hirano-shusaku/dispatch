@@ -103,6 +103,13 @@
                 
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col">
+                        <p>派遣期間</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ ($haken->conterm) }}か月</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
                         <p>派遣料算出方法（月額or時給など）</p>
                         <p class="text-lg text-gray-700 font-semibold">{{ $haken->worktype }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
@@ -196,6 +203,34 @@
                     <div class="w-full flex flex-col">
                         <p>派遣料改定の日付と料金</p>
                         <p class="text-lg text-gray-700 font-semibold">{{ $haken->costmemo??"なし" }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>回覧者①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->circulator1??"なし" }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>回覧者②</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->circulator2??"なし" }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>回覧者③</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->circulator3??"なし" }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>回覧者④</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->circulator4??"なし" }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
                 </div>
         </div>

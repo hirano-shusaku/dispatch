@@ -31,7 +31,7 @@
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col">
                         <label for="company" class="font-semibold leading-none mt-4">派遣会社</label>
-                        <input type="text" name="company" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="company" placeholder="派遣元会社名を入力してください" value="{{ old('yomigana') }}">
+                        <input type="text" name="company" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="company" placeholder="派遣元会社名を入力してください" value="{{ old('company') }}">
                     </div>
                 </div>
                 
@@ -86,14 +86,21 @@
                 
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col form-group">
-                        <label for="worktype" class="font-semibold leading-none mt-4">雇用形態</label>
-                        <select type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" value="{{ old('worktype') }}">
-                            <option value="1">PHP</option>
-                            <option value="2">Ruby</option>
-                            <option value="3">Laravel</option>
-                            <option value="4">Java</option>
-                            <option value="5">jQuery</option>
+                        <label for="worktype" class="font-semibold leading-none mt-4">派遣料算出方法（月額or時給など）</label>
+                        <select type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" >
+                            <option value="">選択されていません</option>
+                            <option type="text" value='月額' @if('月額' == old('worktype')) selected @endif>月額</option>
+                            <option type="text" value='時給' @if('時給' == old('worktype')) selected @endif>時給</option>
+                            <option type="text" value='日額' @if('日額' == old('worktype')) selected @endif>日額</option>
+                            <option type="text" value='その他' @if('その他' == old('worktype')) selected @endif>その他</option>
                         </select>
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="conterm" class="font-semibold leading-none mt-4">契約期間</label>
+                        <input type="number" name="conterm" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="conterm" step="0.5" value="{{ old('conterm') }}">
                     </div>
                 </div>
                 
@@ -181,9 +188,30 @@
                     <label for="costmemo" class="font-semibold leading-none mt-4">派遣料改定の日付と料金</label>
                     <textarea name="costmemo" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="costmemo" cols="20" rows="2">{{ old('costmemo') }}</textarea>
                 </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator1" class="font-semibold leading-none mt-4">稟議回覧者1</label>
+                        <input type="text" name="circulator1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator1" placeholder="稟議回覧者①を入力ください" value="{{ old('circulator1') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator2" class="font-semibold leading-none mt-4">稟議回覧者2</label>
+                        <input type="text" name="circulator2" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator2" placeholder="稟議回覧者②を入力ください" value="{{ old('circulator2') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="circulator3" class="font-semibold leading-none mt-4">稟議回覧者3</label>
+                        <input type="text" name="circulator3" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator3" placeholder="稟議回覧者②を入力ください" value="{{ old('circulator3') }}">
+                    </div>
+                </div>
     
                 <x-button class="mt-2">
-                    送信する
+                    登録する
                 </x-button>
 
             </form>

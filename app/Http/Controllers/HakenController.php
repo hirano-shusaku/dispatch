@@ -51,19 +51,24 @@ class HakenController extends Controller
             'startday'=>'required|date|different:endday',
             'endday'=>'required|date',
             'worktype'=>'required|max:100',
+            'conterm'=>'required|numeric|between:0.5,9',
             'cost'=>'required|integer|min:100',
             'tcostm'=>'nullable|integer|min:1',
             'tcostd'=>'nullable|integer|min:1',
             'troute'=>'nullable|max:100',
             'pnumber'=>'nullable|max:100',
             'pname'=>'nullable|max:100',
-            'tcontent'=>'required|max:100',
+            'tcontent'=>'required|max:300',
             'aname'=>'required|max:100',
             'aemail'=>'required|email|max:100',
             'body'=>'nullable|max:500',
             'confirmer'=>'required|max:100',
             'cemail'=>'required|email|max:100',
             'costmemo'=>'nullable|max:500',
+            'circulator1'=>'nullable|max:100',
+            'circulator2'=>'nullable|max:100',
+            'circulator3'=>'nullable|max:100',
+            'circulator4'=>'nullable|max:100'
         ]);
         
         $haken = new Haken();
@@ -78,6 +83,7 @@ class HakenController extends Controller
         $haken->startday = $request->startday;
         $haken->endday = $request->endday;
         $haken->worktype = $request->worktype;
+        $haken->conterm = $request->conterm;
         $haken->cost = $request->cost;
         $haken->tcostm = $request->tcostm;
         $haken->tcostd = $request->tcostd;
@@ -91,6 +97,10 @@ class HakenController extends Controller
         $haken->confirmer = $request->confirmer;
         $haken->cemail = $request->cemail;
         $haken->costmemo = $request->costmemo;
+        $haken->circulator1 = $request->circulator1;
+        $haken->circulator2 = $request->circulator2;
+        $haken->circulator3 = $request->circulator3;
+        $haken->circulator4 = $request->circulator4;
         $haken->user_id = auth()->user()->id;
         $haken->save();
             
@@ -141,19 +151,24 @@ class HakenController extends Controller
             'startday'=>'required|date|different:endday',
             'endday'=>'required|date',
             'worktype'=>'required|max:100',
+            'conterm'=>'required|numeric|between:0.5,9',
             'cost'=>'required|integer|min:100',
             'tcostm'=>'nullable|integer|min:1',
             'tcostd'=>'nullable|integer|min:1',
             'troute'=>'nullable|max:100',
             'pnumber'=>'nullable|max:100',
             'pname'=>'nullable|max:100',
-            'tcontent'=>'required|max:100',
+            'tcontent'=>'required|max:300',
             'aname'=>'required|max:100',
             'aemail'=>'required|email|max:100',
             'body'=>'nullable|max:500',
             'confirmer'=>'required|max:100',
             'cemail'=>'required|email|max:100',
             'costmemo'=>'nullable|max:500',
+            'circulator1'=>'nullable|max:100',
+            'circulator2'=>'nullable|max:100',
+            'circulator3'=>'nullable|max:100',
+            'circulator4'=>'nullable|max:100'
         ]);
         
         $haken->name = $request->name;
@@ -167,6 +182,7 @@ class HakenController extends Controller
         $haken->startday = $request->startday;
         $haken->endday = $request->endday;
         $haken->worktype = $request->worktype;
+        $haken->conterm = $request->conterm;
         $haken->cost = $request->cost;
         $haken->tcostm = $request->tcostm;
         $haken->tcostd = $request->tcostd;
@@ -180,6 +196,10 @@ class HakenController extends Controller
         $haken->confirmer = $request->confirmer;
         $haken->cemail = $request->cemail;
         $haken->costmemo = $request->costmemo;
+        $haken->circulator1 = $request->circulator1;
+        $haken->circulator2 = $request->circulator2;
+        $haken->circulator3 = $request->circulator3;
+        $haken->circulator4 = $request->circulator4;
         $haken->user_id = auth()->user()->id;
         $haken->save();
             

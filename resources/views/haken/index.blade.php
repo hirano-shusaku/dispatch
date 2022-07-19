@@ -39,7 +39,12 @@
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->endday}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->worktype}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{number_format($haken->cost)}}円</td>
+                    @if( $haken->tcostm !== null )
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{number_format($haken->tcostm)}}円</td>
+                    @else
+                    <td class="border-gray-light border hover:bg-gray-100 p-3">交通費なし</td>
+                    @endif
+                    
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->pname}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->confirmer}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">
