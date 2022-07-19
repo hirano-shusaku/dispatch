@@ -70,7 +70,11 @@
                         $total = $haken->tcostm + $haken->cost;
                         @endphp
                         
+                        @if($haken->worktype == "月額")
                         <p>合計：　{{ $total }}　　　　　（税込）</p><br>
+                        @else
+                        <p></p>
+                        @endif
                         
                         <h3 class="text-lg text-gray-700 font-semibold">６．支払条件・支払予定日</h3>
                         <p>毎月末締め翌月末日に請求書による支払い</p><br>

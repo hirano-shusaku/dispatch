@@ -85,10 +85,22 @@
                     </div>
                 </div>
                 
-                <div class="md:flex items-center">
-                    <div class="w-full flex flex-col">
+                <!--<div class="md:flex items-center">-->
+                <!--    <div class="w-full flex flex-col">-->
+                <!--        <label for="worktype" class="font-semibold leading-none mt-4">派遣料算出方法（月額or時給など）</label>-->
+                <!--        <input type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" value="{{ old('worktype', $haken->worktype) }}">-->
+                <!--    </div>-->
+                <!--</div>-->
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col form-group">
                         <label for="worktype" class="font-semibold leading-none mt-4">派遣料算出方法（月額or時給など）</label>
-                        <input type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" value="{{ old('worktype', $haken->worktype) }}">
+                        <select type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" >
+                            <option value="">選択されていません</option>
+                            <option type="text" value='月額' @if('月額' == old('worktype', $haken->worktype)) selected @endif>月額</option>
+                            <option type="text" value='時給' @if('時給' == old('worktype', $haken->worktype)) selected @endif>時給</option>
+                            <option type="text" value='日額' @if('日額' == old('worktype', $haken->worktype)) selected @endif>日額</option>
+                            <option type="text" value='その他' @if('その他' == old('worktype', $haken->worktype)) selected @endif>その他</option>
+                        </select>
                     </div>
                 </div>
                 

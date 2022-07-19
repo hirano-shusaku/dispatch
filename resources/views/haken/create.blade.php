@@ -84,10 +84,16 @@
                     </div>
                 </div>
                 
-                <div class="md:flex items-center">
-                    <div class="w-full flex flex-col">
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col form-group">
                         <label for="worktype" class="font-semibold leading-none mt-4">雇用形態</label>
-                        <input type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" value="{{ old('worktype') }}">
+                        <select type="text" name="worktype" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="worktype" placeholder="雇用形態（時給等）を入力してください" value="{{ old('worktype') }}">
+                            <option value="1">PHP</option>
+                            <option value="2">Ruby</option>
+                            <option value="3">Laravel</option>
+                            <option value="4">Java</option>
+                            <option value="5">jQuery</option>
+                        </select>
                     </div>
                 </div>
                 
