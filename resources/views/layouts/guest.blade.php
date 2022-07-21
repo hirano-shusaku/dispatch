@@ -19,6 +19,28 @@
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">
+            {{-- ここから貼り付けます --}}
+            <div class="w-full container mx-auto p-6">
+                <div class="w-full flex items-center justify-between">
+                    <div class="flex w-1/2 justify-end content-center">
+                        {{-- ログイン・登録部分 --}}
+                        @if (Route::has('login'))
+                        <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                            @auth
+                                <a href="{{ url('/post') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">HOME</a>
+                            @else
+                                <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline font-bold text-base">ログイン</a>
+        
+                                @if (Route::has('register'))
+                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline font-bold text-base">登録</a>
+                                @endif
+                            @endauth
+                        @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{-- ここまで貼り付けた箇所 --}}
             {{ $slot }}
         </div>
     </body>

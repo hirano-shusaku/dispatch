@@ -255,7 +255,42 @@
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
                         <label for="sccmail5" class="font-semibold leading-none mt-4">部内確認CCメール5</label>
-                        <input type="email" name="sccmail5" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail5" placeholder="部内確認者4CC E-Mailを入力ください" value="{{ old('sccmail5', $haken->sccmail5) }}">
+                        <input type="email" name="sccmail5" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail5" placeholder="部内確認者5CC E-Mailを入力ください" value="{{ old('sccmail5', $haken->sccmail5) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="hccmail1" class="font-semibold leading-none mt-4">派遣元CCメール1</label>
+                        <input type="email" name="hccmail1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="hccmail1" placeholder="派遣元CCメール1 E-Mailを入力ください" value="{{ old('hccmail1', $haken->hccmail1) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="hccmail2" class="font-semibold leading-none mt-4">派遣元CCメール2</label>
+                        <input type="email" name="hccmail2" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="hccmail2" placeholder="派遣元CCメール2 E-Mailを入力ください" value="{{ old('hccmail2', $haken->hccmail2) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="hccmail3" class="font-semibold leading-none mt-4">派遣元CCメール3</label>
+                        <input type="email" name="hccmail3" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="hccmail3" placeholder="派遣元CCメール3 E-Mailを入力ください" value="{{ old('hccmail3', $haken->hccmail3) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="hccmail4" class="font-semibold leading-none mt-4">派遣元CCメール4</label>
+                        <input type="email" name="hccmail4" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="hccmail4" placeholder="派遣元CCメール4 E-Mailを入力ください" value="{{ old('hccmail4', $haken->hccmail4) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="hccmail5" class="font-semibold leading-none mt-4">派遣元CCメール5</label>
+                        <input type="email" name="hccmail5" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="hccmail5" placeholder="派遣元CCメール5 E-Mailを入力ください" value="{{ old('hccmail5', $haken->hccmail5) }}">
                     </div>
                 </div>
     

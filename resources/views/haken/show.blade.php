@@ -13,13 +13,21 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mx-4 sm:p-8">
             
-            <div class="flex justify-end mt-4">
-                <div class="ml-4">
-                    <a href="{{route('haken.hkaku', $haken)}}"><x-button class="bg-red-700 float-right">派遣元確認</x-button></a>
+            <div class="flex justify-end">
+                 <form method="post" action="{{route('haken.destroy', $haken)}}">
+                        @csrf
+                        @method('delete')
+                        <x-button class="bg-red-800 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-button>
+                    </form>
+            </div>
+            
+            <div class="flex justify-stretch mt-4 mb-2">
+                <div class="justify-items-start ml-4">
+                    <a href="{{route('haken.hkaku', $haken)}}"><x-button class="bg-red-700 float-right">派遣元確認メール</x-button></a>
                 </div>
                 
                 <div class="ml-4">
-                    <a href="{{route('haken.mkaku', $haken)}}"><x-button class="bg-teal-700 float-right">部内確認</x-button></a>
+                    <a href="{{route('haken.mkaku', $haken)}}"><x-button class="bg-red-700 float-right">部内の確認メール</x-button></a>
                 </div>
                 
                 <div class="ml-4">
@@ -27,17 +35,13 @@
                 </div>
                 
                 <div class="ml-4">
-                    <a href="{{route('haken.ringi', $haken)}}"><x-button class="bg-blue-700 float-right">稟議</x-button></a>
+                    <a href="{{route('haken.ringi', $haken)}}"><x-button class="bg-blue-700 float-right">通常稟議</x-button></a>
                 </div>
                 <div class="ml-4">
-                    <a href="{{route('haken.shinki', $haken)}}"><x-button class="bg-yellow-700 float-right">新規稟議</x-button></a>
+                    <a href="{{route('haken.shinki', $haken)}}"><x-button class="bg-blue-700 float-right">新規稟議</x-button></a>
                 </div>
                 
-                    <form method="post" action="{{route('haken.destroy', $haken)}}">
-                        @csrf
-                        @method('delete')
-                        <x-button class="bg-red-800 float-right ml-4" onClick="return confirm('本当に削除しますか？');">削除</x-button>
-                    </form>
+                   
             </div>
             
             
@@ -300,6 +304,60 @@
                 <p></p>
                 @endif
                 
+                @if($haken->hccmail1 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>派遣元CCメール①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->hccmail1 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->hccmail2 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>派遣元CCメール①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->hccmail2 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->hccmail3 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>派遣元CCメール①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->hccmail3 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->hccmail4 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>派遣元CCメール①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->hccmail4 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->hccmail5 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>派遣元CCメール①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->hccmail5 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
                 
         </div>
     </div>
