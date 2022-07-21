@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HakenController;
-
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -30,6 +30,8 @@ Route::middleware(['auth'])->group(function(){
     Route::get('haken/{haken}/shinki', [HakenController::class, 'shinki'])->name('haken.shinki');
     Route::get('haken/{haken}/mkaku', [HakenController::class, 'mkaku'])->name('haken.mkaku');
     Route::get('haken/{haken}/hkaku', [HakenController::class, 'hkaku'])->name('haken.hkaku');
+    
+    Route::get('profile/index', [ProfileController::class, 'index'])->name('profile.index');
 });
 
 

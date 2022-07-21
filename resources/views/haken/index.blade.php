@@ -11,7 +11,7 @@
    <div class="max-w-full mx-auto px-2 sm:px-2 lg:px-2">
         <div class="my-6">
             <table class="text-left w-full border-collapse mt-8"> 
-                <tr class="bg-green-600">
+                <tr class="bg-sky-600">
                     <th class="p-3 text-left text-white">id</th>
                     <th class="p-3 text-left text-white">名前</th>   
                     <th class="p-3 text-left text-white">派遣会社</th>

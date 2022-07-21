@@ -22,6 +22,9 @@
                     <x-nav-link :href="route('haken.create')" :active="request()->routeIs('haken.create')">
                         派遣新規入力
                     </x-nav-link>
+                    <x-nav-link :href="route('profile.index')" :active="request()->routeIs('profile.index')">
+                        ユーザーの一覧
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -78,6 +81,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('haken.create')" :active="request()->routeIs('haken.create')">
                 派遣新規入力
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('profile.index')" :active="request()->routeIs('profile.index')">
+                ユーザーの一覧
             </x-responsive-nav-link>
         </div>
 
