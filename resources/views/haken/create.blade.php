@@ -209,6 +209,48 @@
                         <input type="text" name="circulator3" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator3" placeholder="稟議回覧者②を入力ください" value="{{ old('circulator3') }}">
                     </div>
                 </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail1" class="font-semibold leading-none mt-4">部内確認CCメール①</label>
+                        <input type="email" name="sccmail1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail1" placeholder="部内確認CCメールアドレス①を入力ください" value="{{ old('sccmail1') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail2" class="font-semibold leading-none mt-4">部内確認CCメール②</label>
+                        <input type="email" name="sccmail1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail2" placeholder="部内確認CCメールアドレス②を入力ください" value="{{ old('sccmail2') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail3" class="font-semibold leading-none mt-4">部内確認CCメール③</label>
+                        <input type="email" name="sccmail3" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail3" placeholder="部内確認CCメールアドレス③を入力ください" value="{{ old('sccmail3') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail4" class="font-semibold leading-none mt-4">部内確認CCメール④</label>
+                        <input type="email" name="sccmail4" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail4" placeholder="部内確認CCメールアドレス④を入力ください" value="{{ old('sccmail4') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail5" class="font-semibold leading-none mt-4">部内確認CCメール⑤</label>
+                        <input type="email" name="sccmail5" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail5" placeholder="部内確認CCメールアドレス⑤を入力ください" value="{{ old('sccmail5') }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail1" class="font-semibold leading-none mt-4">部内確認CCメール①</label>
+                        <input type="email" name="sccmail1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail1" placeholder="部内確認CCメールアドレス①を入力ください" value="{{ old('sccmail1') }}">
+                    </div>
+                </div>
     
                 <x-button class="mt-2">
                     登録する

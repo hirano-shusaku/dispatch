@@ -68,7 +68,12 @@ class HakenController extends Controller
             'circulator1'=>'nullable|max:100',
             'circulator2'=>'nullable|max:100',
             'circulator3'=>'nullable|max:100',
-            'circulator4'=>'nullable|max:100'
+            'circulator4'=>'nullable|max:100',
+            'sccmail1'=>'required|email|max:100',
+            'sccmail2'=>'required|email|max:100',
+            'sccmail3'=>'required|email|max:100',
+            'sccmail4'=>'required|email|max:100',
+            'sccmail5'=>'required|email|max:100'
         ]);
         
         $haken = new Haken();
@@ -101,6 +106,11 @@ class HakenController extends Controller
         $haken->circulator2 = $request->circulator2;
         $haken->circulator3 = $request->circulator3;
         $haken->circulator4 = $request->circulator4;
+        $haken->sccmail1 = $request->sccmail1;
+        $haken->sccmail2 = $request->sccmail2;
+        $haken->sccmail3 = $request->sccmail3;
+        $haken->sccmail4 = $request->sccmail4;
+        $haken->sccmail5 = $request->sccmail5;
         $haken->user_id = auth()->user()->id;
         $haken->save();
             
@@ -168,7 +178,12 @@ class HakenController extends Controller
             'circulator1'=>'nullable|max:100',
             'circulator2'=>'nullable|max:100',
             'circulator3'=>'nullable|max:100',
-            'circulator4'=>'nullable|max:100'
+            'circulator4'=>'nullable|max:100',
+            'sccmail1'=>'nullable|email|max:100',
+            'sccmail2'=>'nullable|email|max:100',
+            'sccmail3'=>'nullable|email|max:100',
+            'sccmail4'=>'nullable|email|max:100',
+            'sccmail5'=>'nullable|email|max:100'
         ]);
         
         $haken->name = $request->name;
@@ -200,6 +215,11 @@ class HakenController extends Controller
         $haken->circulator2 = $request->circulator2;
         $haken->circulator3 = $request->circulator3;
         $haken->circulator4 = $request->circulator4;
+        $haken->sccmail1 = $request->sccmail1;
+        $haken->sccmail2 = $request->sccmail2;
+        $haken->sccmail3 = $request->sccmail3;
+        $haken->sccmail4 = $request->sccmail4;
+        $haken->sccmail5 = $request->sccmail5;
         $haken->user_id = auth()->user()->id;
         $haken->save();
             
@@ -228,5 +248,17 @@ class HakenController extends Controller
     public function shinki(Haken $haken)
     {
         return view('haken.shinki', compact('haken'));
+    }
+    
+    public function mkaku(Haken $haken)
+    {
+        $user = auth()->user();
+        return view('haken.mkaku', compact('haken', 'user'));
+    }
+    
+    public function hkaku(Haken $haken)
+    {
+        $user = auth()->user();
+        return view('haken.hkaku', compact('haken', 'user'));
     }
 }

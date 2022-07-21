@@ -19,4 +19,10 @@ class Haken extends Model
     {
         return $this->belongsTo('User::class');
     }
+    
+    Protected $dates = [
+        'firstday',
+        'startday',
+        'endday'
+        ];
 }

@@ -67,21 +67,21 @@
                  <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
                         <label for="firstday" class="font-semibold leading-none mt-4">入社日</label>
-                        <input type="date" name="firstday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="firstday" placeholder="初出勤日（入社日）を入力してください" value="{{ old('firstday', $haken->firstday) }}">
+                        <input type="date" name="firstday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="firstday" placeholder="初出勤日（入社日）を入力してください" value="{{ old('firstday', $haken->firstday->format('Y-m-d')) }}">
                     </div>
                 </div>
                 
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
                         <label for="startday" class="font-semibold leading-none mt-4">契約開始日</label>
-                        <input type="date" name="startday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="startday" placeholder="契約開始日を入力してください" value="{{ old('startday', $haken->startday) }}">
+                        <input type="date" name="startday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="startday" placeholder="契約開始日を入力してください" value="{{ old('startday', $haken->startday->format('Y-m-d')) }}">
                     </div>
                 </div>
                 
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
                         <label for="endday" class="font-semibold leading-none mt-4">契約終了日</label>
-                        <input type="date" name="endday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="endday" placeholder="契約終了日を入力してください" value="{{ old('endday', $haken->endday) }}">
+                        <input type="date" name="endday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="endday" placeholder="契約終了日を入力してください" value="{{ old('endday', $haken->endday->format('Y-m-d')) }}">
                     </div>
                 </div>
                 
@@ -221,6 +221,41 @@
                     <div class="w-full flex flex-col">
                         <label for="circulator4" class="font-semibold leading-none mt-4">稟議回覧者4</label>
                         <input type="text" name="circulator4" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="circulator4" placeholder="稟議回覧者④を入力ください" value="{{ old('circulator3', $haken->circulator4) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail1" class="font-semibold leading-none mt-4">部内確認CCメール1</label>
+                        <input type="email" name="sccmail1" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail1" placeholder="部内確認者1CC E-Mailを入力ください" value="{{ old('sccmail1', $haken->sccmail1) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail2" class="font-semibold leading-none mt-4">部内確認CCメール2</label>
+                        <input type="email" name="sccmail2" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail2" placeholder="部内確認者2CC E-Mailを入力ください" value="{{ old('sccmail2', $haken->sccmail2) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail3" class="font-semibold leading-none mt-4">部内確認CCメール3</label>
+                        <input type="email" name="sccmail3" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail3" placeholder="部内確認者3CC E-Mailを入力ください" value="{{ old('sccmail3', $haken->sccmail3) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail4" class="font-semibold leading-none mt-4">部内確認CCメール4</label>
+                        <input type="email" name="sccmail4" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail4" placeholder="部内確認者4CC E-Mailを入力ください" value="{{ old('sccmail4', $haken->sccmail4) }}">
+                    </div>
+                </div>
+                
+                <div class="md:flex items-center">
+                    <div class="w-full flex flex-col">
+                        <label for="sccmail5" class="font-semibold leading-none mt-4">部内確認CCメール5</label>
+                        <input type="email" name="sccmail5" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="sccmail5" placeholder="部内確認者4CC E-Mailを入力ください" value="{{ old('sccmail5', $haken->sccmail5) }}">
                     </div>
                 </div>
     

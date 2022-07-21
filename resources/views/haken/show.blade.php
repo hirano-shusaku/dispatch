@@ -14,7 +14,18 @@
         <div class="mx-4 sm:p-8">
             
             <div class="flex justify-end mt-4">
-                <a href="{{route('haken.edit', $haken)}}"><x-button class="bg-teal-700 float-right">編集</x-button></a>
+                <div class="ml-4">
+                    <a href="{{route('haken.hkaku', $haken)}}"><x-button class="bg-red-700 float-right">派遣元確認</x-button></a>
+                </div>
+                
+                <div class="ml-4">
+                    <a href="{{route('haken.mkaku', $haken)}}"><x-button class="bg-teal-700 float-right">部内確認</x-button></a>
+                </div>
+                
+                <div class="ml-4">
+                    <a href="{{route('haken.edit', $haken)}}"><x-button class="bg-teal-700 float-right">編集</x-button></a>
+                </div>
+                
                 <div class="ml-4">
                     <a href="{{route('haken.ringi', $haken)}}"><x-button class="bg-blue-700 float-right">稟議</x-button></a>
                 </div>
@@ -83,21 +94,21 @@
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col">
                         <p>入社日</p>
-                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->firstday }}</p><hr class="border-b-1 border-blue-600 w-full">
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->firstday->format('Y年m月d日') }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
                 </div>
                 
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col">
                         <p>契約開始日</p>
-                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->startday }}</p><hr class="border-b-1 border-blue-600 w-full">
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->startday->format('Y年m月d日') }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
                 </div>
                 
                 <div class="md:flex items-center ">
                     <div class="w-full flex flex-col">
                         <p>契約終了日</p>
-                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->endday }}</p><hr class="border-b-1 border-blue-600 w-full">
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->endday->format('Y年m月d日') }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
                 </div>
                 
@@ -233,6 +244,63 @@
                         <p class="text-lg text-gray-700 font-semibold">{{ $haken->circulator4??"なし" }}</p><hr class="border-b-1 border-blue-600 w-full">
                     </div>
                 </div>
+                
+                @if($haken->sccmail1 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>部内確認CCメール①</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->sccmail1 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->sccmail2 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>部内確認CCメール②</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->sccmail2 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->sccmail3 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>部内確認CCメール③</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->sccmail3 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->sccmail4 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>部内確認CCメール④</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->sccmail4 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                @if($haken->sccmail5 !== null)
+                <div class="md:flex items-center ">
+                    <div class="w-full flex flex-col">
+                        <p>部内確認CCメール⑤</p>
+                        <p class="text-lg text-gray-700 font-semibold">{{ $haken->sccmail5 }}</p><hr class="border-b-1 border-blue-600 w-full">
+                    </div>
+                </div>
+                @else
+                <p></p>
+                @endif
+                
+                
         </div>
     </div>
         

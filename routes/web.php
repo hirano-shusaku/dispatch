@@ -27,6 +27,8 @@ Route::get('/dashboard', function () {
 Route::resource('haken', HakenController::class);
 Route::get('haken/{haken}/ringi', [HakenController::class, 'ringi'])->name('haken.ringi');
 Route::get('haken/{haken}/shinki', [HakenController::class, 'shinki'])->name('haken.shinki');
+Route::get('haken/{haken}/mkaku', [HakenController::class, 'mkaku'])->name('haken.mkaku');
+Route::get('haken/{haken}/hkaku', [HakenController::class, 'hkaku'])->name('haken.hkaku');
 
 
 require __DIR__.'/auth.php';

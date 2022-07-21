@@ -35,8 +35,8 @@
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->depart}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->section}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->job}}</td>
-                    <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->startday}}</td>
-                    <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->endday}}</td>
+                    <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->startday->format('Y/m/d')}}</td>
+                    <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->endday->format('Y/m/d')}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$haken->worktype}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{number_format($haken->cost)}}円</td>
                     @if( $haken->tcostm !== null )

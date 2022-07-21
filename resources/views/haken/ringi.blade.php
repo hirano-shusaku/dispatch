@@ -17,8 +17,8 @@
                     <div class="w-full flex flex-col">
                         <p><span class="font-bold text-xl text-blue-700">①C-06-02</span>を選択します</p>
                         <p>②申請部門は<span class="font-bold text-xl text-blue-700">{{ $haken->depart }}</span></p>
-                        <p>③最初の回覧先は<span class="font-bold text-xl text-blue-700">{{ $haken->circulator1??"登録されてません" }}</span>さん</p>
-                        <p>④次の回覧先は<span class="font-bold text-xl text-blue-700">{{ $haken->circulator2??"登録されてません" }}</span>さん</p>
+                        <p>③最初の回覧先は<span class="font-bold text-xl text-blue-700">{{ $haken->circulator1??"登録なし" }}</span>さん</p>
+                        <p>④次の回覧先は<span class="font-bold text-xl text-blue-700">{{ $haken->circulator2??"登録なし" }}</span>さん</p>
                         @if($haken->circulator3!== null)
                         <p>④次の回覧先は<span class="font-bold text-xl text-blue-700">{{ $haken->circulator3 }}</span>さん</p>
                         @else
@@ -42,7 +42,7 @@
                      <div class="w-full flex flex-col">
                         <p class="text-lg text-gray-700 font-semibold"></p><hr class="border-b-1 border-blue-600 w-full">
                         <label for="title" class="font-semibold leading-none mt-4">案件名</label>
-                        <p>【SOJ】【外注派遣】{{$haken->job}}{{$haken->name}}氏 3か月(更新){{$haken->startday}}～{{$haken->endday}}</p>
+                        <p>【SOJ】【外注派遣】{{$haken->job}}{{$haken->name}}氏 3か月(更新){{$haken->startday->format('Y/m/d')}}～{{$haken->endday->format('Y/m/d')}}</p>
                      </div>
                     </div><br>
     
@@ -60,8 +60,8 @@
                         <p>{{ $haken->tcontent }}</p><br>
                         
                         <h3 class="text-lg text-gray-700 font-semibold">４．契約期間</h3>
-                        <p>{{ $haken->startday }}～{{ $haken->endday }}（{{ $haken->conterm }}か月）</p>
-                        <p> （※契約開始日：{{ $haken->firstday }} ）</p>
+                        <p>{{ $haken->startday->format('Y年m月d日') }}～{{ $haken->endday->format('Y年m月d日') }}（{{ $haken->conterm }}か月）</p>
+                        <p> （※契約開始日：{{ $haken->firstday ->format('Y年m月d日')}}）</p>
                         <p>稼働日はセガカレンダーに準拠します</p><br>
                         
                         <h3 class="text-lg text-gray-700 font-semibold">５．費用</h3>
@@ -105,7 +105,7 @@
                         
                         <h3 class="text-lg text-gray-700 font-semibold">７．特記事項</h3>
                         <p>見積書を添付致しました。よろしくお願いいたします。</p><br>
-                        <p class="text-lg text-gray-700 font-semibold"></p><hr class="border-b-1 border-blue-600 w-full">
+                        <p class="text-lg text-gray-700 font-semibold"></p><hr class="border-b-1 border-blue-600 w-full"><br>
                         
                         <p>1:<span class="font-bold text-xl text-blue-700">見積書</span>を添付する</p>
                         <p>2:関連申請に<span class="font-bold text-xl text-blue-700">１つ前の申請を紐づける</span></p>
