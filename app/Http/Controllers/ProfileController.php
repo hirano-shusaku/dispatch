@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -12,5 +15,49 @@ class ProfileController extends Controller
         $users = User::all();
         
         return view('profile.index', compact('users'));
+    }
+    
+    public function edit(User $user)
+    {
+        $this->authorize('update', $user);
+        
+        return view('profile.edit', compact('user'));
+    }
+    
+    public function update(User $user, Request $request)
+    {
+        $this->authorize('update', $user);
+        
+        $inputs = request()->validate([
+            'name' => 'required|max:255',
+            'email' => ['required','email','max:255',Rule::unique('users')->ignore($user->id)],
+            'avatar' => 'image|max:1024',
+            'password' => 'nullable|max:255|min:8',
+            'password_confirmation' => 'nullable|same:password'
+        ]);
+        //パスワード設定
+        if(!isset($inputs['password']))
+        {
+            unset($inputs['password']);
+        }else{
+            $inputs['password'] = Hash::make($inputs['password']);
+        }
+        
+        //avatar store
+        if(isset($inputs['avatar']))
+        {
+            if($user->avatar !== 'user_default.jpg')
+            {
+                $olda = 'public/avatar'.$user->avatar;
+                Storage::delete($olda);
+            }
+            $name = request()->file('avatar')->getClientOriginalName();
+            $avatar = date('Ymd_His').'_'.$name;
+            request()->file('avatar')->storeAs('public/avatar', $avatar);
+            $inputs['avatar'] = $avatar;
+        }
+        
+        $user->update($inputs);
+        return back()->with('message','情報を更新しました');
     }
 }

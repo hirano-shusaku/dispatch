@@ -31,7 +31,14 @@ Route::middleware(['auth'])->group(function(){
     Route::get('haken/{haken}/mkaku', [HakenController::class, 'mkaku'])->name('haken.mkaku');
     Route::get('haken/{haken}/hkaku', [HakenController::class, 'hkaku'])->name('haken.hkaku');
     
-    Route::get('profile/index', [ProfileController::class, 'index'])->name('profile.index');
+    Route::get('profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
+    
+    
+    Route::middleware(['can:admin'])->group(function(){
+        Route::get('profile/index', [ProfileController::class, 'index'])->name('profile.index');
+    });
+    
 });
 
 
