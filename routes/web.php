@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HakenController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RoleController;
 
 
 /*
@@ -37,6 +38,11 @@ Route::middleware(['auth'])->group(function(){
     
     Route::middleware(['can:admin'])->group(function(){
         Route::get('profile/index', [ProfileController::class, 'index'])->name('profile.index');
+        Route::delete('profile/{user}', [ProfileController::class, 'delete'])->name('profile.delete');
+        
+        //attach
+        Route::patch('roles/{user}/attach', [RoleController::class, 'attach'])->name('role.attach');
+        Route::patch('roles/{user}/detach', [RoleController::class, 'detach'])->name('role.detach');
     });
     
 });

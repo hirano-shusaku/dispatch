@@ -14,6 +14,8 @@
                     <th class="p-3 text-left text-white">名前</th>
                     <th class="p-3 text-left text-white">Email</th>
                     <th class="p-3 text-left text-white">アバター</th>
+                    <th class="p-3 text-left text-white">編集</th>
+                    <th class="p-3 text-left text-white">削除</th>
                 </tr>
                 @foreach($users as $user) 
                 <tr class="bg-white">
@@ -24,6 +26,16 @@
                         <div class="rounded-full w-12 h-12">
                             <img src="{{ asset('storage/avatar/'.($user->avatar??'user_default.jpg')) }}">
                         </div>
+                    </td>
+                    <td class="border-gray-light border hover:bg-gray-100 p-3">
+                        <a href="{{route('profile.edit', $user)}}"><x-button class="bg-teal-700">編集</x-button></a>
+                    </td>
+                    <td class="border-gray-light border hover:bg-gray-100 p-3">
+                    <form method="post" action="{{ route('profile.delete', $user) }}">
+                        @method('delete')
+                        @csrf
+                        <x-button class="bg-red-700" onClick="return confirm('本当に削除しますか？');">削除</x-button>
+                    </form>
                     </td>
                 </tr>
                 @endforeach
