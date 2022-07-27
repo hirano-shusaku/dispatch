@@ -32,6 +32,9 @@
                     <x-nav-link :href="route('profile.edit',auth()->user()->id )" :active="request()->routeIs('profile.edit')">
                         プロフィール編集
                     </x-nav-link>
+                    <x-nav-link :href="route('haken.stop')" :active="request()->routeIs('haken.stop')">
+                        削除（退職）派遣一覧
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -96,6 +99,9 @@
             @endcan
             <x-responsive-nav-link :href="route('profile.edit',auth()->user()->id )" :active="request()->routeIs('profile.edit')">
                 プロフィール変更
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('haken.stop')" :active="request()->routeIs('haken.stop')">
+                削除（退職）派遣一覧
             </x-responsive-nav-link>
         </div>
 

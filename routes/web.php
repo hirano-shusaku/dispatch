@@ -26,11 +26,14 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function(){
+    Route::get('haken/stop', [HakenController::class, 'stop'])->name('haken.stop');
+    Route::get('haken/stop/{id}', [HakenController::class, 'stopshow'])->name('haken.stopshow');
     Route::resource('haken', HakenController::class);
     Route::get('haken/{haken}/ringi', [HakenController::class, 'ringi'])->name('haken.ringi');
     Route::get('haken/{haken}/shinki', [HakenController::class, 'shinki'])->name('haken.shinki');
     Route::get('haken/{haken}/mkaku', [HakenController::class, 'mkaku'])->name('haken.mkaku');
     Route::get('haken/{haken}/hkaku', [HakenController::class, 'hkaku'])->name('haken.hkaku');
+    
     
     Route::get('profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/{user}', [ProfileController::class, 'update'])->name('profile.update');

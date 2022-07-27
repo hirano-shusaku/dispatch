@@ -35,6 +35,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
+            'name2' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'avatar' => ['image', 'max:1024'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
@@ -42,6 +43,7 @@ class RegisteredUserController extends Controller
 
         $attr = [
             'name' => $request->name,
+            'name2' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ];

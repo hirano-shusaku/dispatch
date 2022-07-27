@@ -20,7 +20,7 @@
                 @foreach($users as $user) 
                 <tr class="bg-white">
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$user->id}}</td>
-                    <td class="border-gray-light border hover:bg-gray-100 p-3">{{$user->name}}</td>
+                    <td class="border-gray-light border hover:bg-gray-100 p-3">{{$user->name}} {{$user->name2}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">{{$user->email}}</td>
                     <td class="border-gray-light border hover:bg-gray-100 p-3">
                         <div class="rounded-full w-12 h-12">

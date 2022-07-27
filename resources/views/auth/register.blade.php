@@ -14,9 +14,15 @@
 
             <!-- Name -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="name" :value="__('苗字')" />
 
                 <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+            </div>
+            
+            <div>
+                <x-label for="name2" :value="__('名前')" />
+
+                <x-input id="name2" class="block mt-1 w-full" type="text" name="name2" :value="old('name2')" autofocus />
             </div>
 
             <!-- Email Address -->

@@ -33,6 +33,7 @@ class ProfileController extends Controller
         
         $inputs = request()->validate([
             'name' => 'required|max:255',
+            'name2' => 'nullable|max:255',
             'email' => ['required','email','max:255',Rule::unique('users')->ignore($user->id)],
             'avatar' => 'image|max:1024',
             'password' => 'nullable|max:255|min:8',

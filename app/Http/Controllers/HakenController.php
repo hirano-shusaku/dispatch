@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Haken;
 use Illuminate\Http\Request;
 
+
 class HakenController extends Controller
 {
     /**
@@ -280,5 +281,22 @@ class HakenController extends Controller
     {
         $user = auth()->user();
         return view('haken.hkaku', compact('haken', 'user'));
+    }
+    
+    public function stop()
+    {
+        $stops = Haken::onlyTrashed()->get();
+        
+        $user = auth()->user();
+        
+        return view('haken.stop', compact('stops', 'user'));
+    }
+    
+    public function stopshow($id)
+    {
+        
+        $stop = Haken::onlyTrashed()->where('id', $id)->first();
+        //dd($stop);
+        return view('haken.stopshow', compact('stop'));
     }
 }
