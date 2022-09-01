@@ -32,9 +32,12 @@
                     <x-nav-link :href="route('profile.edit',auth()->user()->id )" :active="request()->routeIs('profile.edit')">
                         プロフィール編集
                     </x-nav-link>
+                    
                     <x-nav-link :href="route('haken.stop')" :active="request()->routeIs('haken.stop')">
-                        削除（退職）派遣一覧
+                        <span class="text-red-700 bg-slate-200">削除（退職）派遣一覧</span>
                     </x-nav-link>
+                    
+                    
                 </div>
             </div>
 
@@ -101,7 +104,7 @@
                 プロフィール変更
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('haken.stop')" :active="request()->routeIs('haken.stop')">
-                削除（退職）派遣一覧
+                <span class="text-red-700 bg-slate-200">削除（退職）派遣一覧</span>
             </x-responsive-nav-link>
         </div>
 
