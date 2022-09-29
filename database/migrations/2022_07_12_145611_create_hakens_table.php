@@ -18,11 +18,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('yomigana');
             $table->string('company');
-            $table->string('number');
+            $table->string('number')->nullable();
             $table->string('depart');
             $table->string('section');
             $table->string('job');
-            $table->date('firstday');
+            $table->date('firstday')->nullable();
             $table->date('startday');
             $table->date('endday');
             $table->integer('cost');
@@ -31,7 +31,7 @@ return new class extends Migration
             $table->string('troute')->nullable();
             $table->string('pnumber')->nullable();
             $table->string('pname')->nullable();
-            $table->text('tcontent');
+            $table->text('tcontent')->nullable();
             $table->string('aname');
             $table->string('aemail');
             $table->text('body')->nullable();

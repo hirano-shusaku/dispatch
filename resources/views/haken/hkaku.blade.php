@@ -38,7 +38,10 @@
                             <p>いつもお世話になっております。<br>
                             株式会社セガ{{ $user->name }}です。</p>
                             表題の件ですが、<br>
-                            現契約が{{$haken->endday->format('Y年m月d日')}}となります{{$haken->name}}様につきまして<br>
+                            @php
+                                $Fcday = $haken->startday ->subDay();
+                            @endphp
+                            現契約が{{ ($Fcday->format('Y年m月d日')) }}までとなります「{{$haken->name}}」様につきまして<br>
                             担当者に、{{$haken->conterm}}か月延長の更新希望の確認がとれましたので、<br>
                             御社でご確認して頂きご承諾いただけましたら<br>
                             {{$haken->startday->format('Y年m月d日')}}～{{$haken->endday->format('Y年m月d日')}}（{{ $haken->conterm }}か月分の）<br>

@@ -46,7 +46,7 @@
                 
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
-                        <label for="number" class="font-semibold leading-none mt-4">派遣コード ※必須</label>
+                        <label for="number" class="font-semibold leading-none mt-4">派遣コード</label>
                         <input type="text" name="number" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="number" placeholder="派遣者コード番号を入力してください" value="{{ old('number') }}">
                         @error('number')
                             <p class="bg-red-200">※{{ $message }}</p>
@@ -86,7 +86,7 @@
                 
                  <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
-                        <label for="firstday" class="font-semibold leading-none mt-4">入社日　※必須</label>
+                        <label for="firstday" class="font-semibold leading-none mt-4">入社日</label>
                         <input type="date" name="firstday" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="firstday" placeholder="初出勤日（入社日）を入力してください" value="{{ old('firstday') }}">
                         @error('firstday')
                             <p class="bg-red-200">※{{ $message }}</p>
@@ -132,7 +132,7 @@
                 
                 <div class="md:flex items-center">
                     <div class="w-full flex flex-col">
-                        <label for="conterm" class="font-semibold leading-none mt-4">契約期間　※必須</label>
+                        <label for="conterm" class="font-semibold leading-none mt-4">契約期間(ヵ月)　※必須</label>
                         <input type="number" name="conterm" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="conterm" step="0.5" value="{{ old('conterm') }}">
                         @error('conterm')
                             <p class="bg-red-200">※{{ $message }}</p>
@@ -201,7 +201,7 @@
                 </div>
     
                 <div class="w-full flex flex-col">
-                    <label for="tcontent" class="font-semibold leading-none mt-4">作業内容　※必須</label>
+                    <label for="tcontent" class="font-semibold leading-none mt-4">作業内容</label>
                     <textarea name="tcontent" class="w-auto py-2 placeholder-gray-300 border border-gray-300 rounded-md" id="tcontent" cols="20" rows="2">{{ old('tcontent') }}</textarea>
                     @error('tcontent')
                             <p class="bg-red-200">※{{ $message }}</p>

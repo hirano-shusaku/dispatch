@@ -44,11 +44,11 @@ class HakenController extends Controller
             'name'=>'required|max:100',
             'yomigana'=>'required|max:200',
             'company'=>'required|max:100',
-            'number'=>'required|max:100',
+            'number'=>'nullable|max:100',
             'depart'=>'required|max:100',
             'section'=>'required|max:100',
             'job'=>'required|max:100',
-            'firstday'=>'required|date|different:endday',
+            'firstday'=>'nullable|date|different:endday',
             'startday'=>'required|date|different:endday',
             'endday'=>'required|date',
             'worktype'=>'required|max:100',
@@ -59,7 +59,7 @@ class HakenController extends Controller
             'troute'=>'nullable|max:100',
             'pnumber'=>'nullable|max:100',
             'pname'=>'nullable|max:100',
-            'tcontent'=>'required|max:300',
+            'tcontent'=>'nullable|max:300',
             'aname'=>'required|max:100',
             'aemail'=>'required|email|max:100',
             'body'=>'nullable|max:500',
@@ -164,11 +164,11 @@ class HakenController extends Controller
             'name'=>'required|max:100',
             'yomigana'=>'required|max:200',
             'company'=>'required|max:100',
-            'number'=>'required|max:100',
+            'number'=>'nullable|max:100',
             'depart'=>'required|max:100',
             'section'=>'required|max:100',
             'job'=>'required|max:100',
-            'firstday'=>'required|date|different:endday',
+            'firstday'=>'nullable|date|different:endday',
             'startday'=>'required|date|different:endday',
             'endday'=>'required|date',
             'worktype'=>'required|max:100',
@@ -179,7 +179,7 @@ class HakenController extends Controller
             'troute'=>'nullable|max:100',
             'pnumber'=>'nullable|max:100',
             'pname'=>'nullable|max:100',
-            'tcontent'=>'required|max:300',
+            'tcontent'=>'nullable|max:300',
             'aname'=>'required|max:100',
             'aemail'=>'required|email|max:100',
             'body'=>'nullable|max:500',
@@ -298,5 +298,14 @@ class HakenController extends Controller
         $stop = Haken::onlyTrashed()->where('id', $id)->first();
         //dd($stop);
         return view('haken.stopshow', compact('stop'));
+    }
+    
+    public function revival($stop)
+    {
+        //dd($stop);
+        Haken::onlyTrashed()->where('id', $stop)->restore();
+        //Haken::find($stop)->restore();
+        
+        return to_route('haken.index')->with('message', '派遣の方を復元しました');
     }
 }

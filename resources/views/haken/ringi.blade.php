@@ -78,7 +78,7 @@
                         @endif
                         
                         <p>{{ $haken->body }}</p><br>
-                        <p>交通費</p>
+                        <p>交通費(※出社の場合)</p>
                         
                         @if($haken->tcostm == 0)
                         <p>※派遣料に含まれます</p><br>
@@ -112,7 +112,7 @@
                         <p>3:費用負担部門は<span class="font-bold text-xl text-blue-700">{{ $haken->depart }}の【最初】</span>の事業部のみ</p>
                         <p>4:取引先は<span class="font-bold text-xl text-blue-700">{{ $haken->company }}</span></p>
                         <p>5:プロジェクトは<span class="font-bold text-xl text-blue-700">{{ $haken->pnumber }}</span></p>
-                        <p>6:支払予定日は<span class="font-bold text-xl text-blue-700">{{ $haken->startday }}</span>の<span class="font-bold text-xl text-blue-700">翌月末日</span></p>
+                        <p>6:支払予定日は<span class="font-bold text-xl text-blue-700">{{ $haken->startday->format('Y年m月') }}</span>の<span class="font-bold text-xl text-blue-700">翌月末日</span></p>
                         <p>7:金額（税込）は<span class="font-bold text-xl text-blue-700">見積書の金額</span>を必ず確認</p>
     
                     </div>

@@ -11,7 +11,14 @@
     
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mx-4 sm:p-stop
+        <div class="mx-4 sm:p-8">
+            
+            <div class="flex justify-end">
+                 <form method="get" action="{{route('haken.revival', $stop)}}">
+                        @csrf
+                        <x-button class="bg-red-800 float-right ml-4" onClick="return confirm('本当に復活しますか？');">復元</x-button>
+                    </form>
+            </div>
                 <div class="md:flex items-center mt-2">
                     
                 </div>
