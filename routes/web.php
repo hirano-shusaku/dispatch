@@ -27,8 +27,8 @@ Route::get('/dashboard', function () {
 
 Route::middleware(['auth'])->group(function(){
     Route::get('haken/stop', [HakenController::class, 'stop'])->name('haken.stop');
-    Route::get('haken/stop/{id}', [HakenController::class, 'stopshow'])->name('haken.stopshow');
-    Route::get('haken/stop/revival/{id}', [HakenController::class, 'revival'])->name('haken.revival');
+    Route::get('haken/stop/show/{id}', [HakenController::class, 'stopshow'])->name('haken.stopshow');
+    Route::get('haken/stop/{id}', [HakenController::class, 'revival'])->name('haken.revival');
     Route::resource('haken', HakenController::class);
     Route::get('haken/{haken}/ringi', [HakenController::class, 'ringi'])->name('haken.ringi');
     Route::get('haken/{haken}/shinki', [HakenController::class, 'shinki'])->name('haken.shinki');

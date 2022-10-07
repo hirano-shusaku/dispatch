@@ -47,44 +47,44 @@
                     </div><br>
     
                     <div class="w-full flex flex-col">
-                        <h3 class="text-lg text-gray-700 font-semibold">１．理由・目的</h3>
-                        <p>{{ $haken->depart }}{{ $haken->section }}において、派遣契約を締結しております</p>
-                        <p>{{ $haken->name }}氏の契約満了に伴い、契約期間を更新したく。稟議申請いたします</p><br>
+                        <h4 class="text-lg text-gray-700 font-semibold">１．理由・目的</h4>
+                        <span>{{ $haken->depart }}{{ $haken->section }}において、派遣契約を締結しております<br>
+                           {{ $haken->name }}氏の契約満了に伴い、契約期間を更新したく。稟議申請いたします</span><br>
                         
-                        <h3 class="text-lg text-gray-700 font-semibold">２．相手先</h3>
-                        <p>{{ $haken->company }}</p><br>
+                        <h4 class="text-lg text-gray-700 font-semibold">２．相手先</h4>
+                        <span>{{ $haken->company }}</span><br>
                         
-                        <h3 class="text-lg text-gray-700 font-semibold">３．内容</h3>
-                        <p>名前：{{ $haken->name }}（{{ $haken->yomigana }}）{{ $haken->number }}</p>
-                        <p>業務内容：{{ $haken->pnumber }}・{{ $haken->pname }}</p>
-                        <p>{{ $haken->tcontent }}</p><br>
+                        <h4 class="text-lg text-gray-700 font-semibold">３．内容</h4>
+                        <span>名前：{{ $haken->name }}（{{ $haken->yomigana }}）{{ $haken->number }}<br>
+                           業務内容：{{ $haken->pnumber }}・{{ $haken->pname }}<br>
+                           {{ $haken->tcontent }}</span><br>
                         
-                        <h3 class="text-lg text-gray-700 font-semibold">４．契約期間</h3>
-                        <p>{{ $haken->startday->format('Y年m月d日') }}～{{ $haken->endday->format('Y年m月d日') }}（{{ $haken->conterm }}か月）</p>
-                        <p> （※契約開始日：{{ $haken->firstday ->format('Y年m月d日')}}）</p>
-                        <p>稼働日はセガカレンダーに準拠します</p><br>
+                        <h4 class="text-lg text-gray-700 font-semibold">４．契約期間</h4>
+                        <span>{{ $haken->startday->format('Y年m月d日') }}～{{ $haken->endday->format('Y年m月d日') }}（{{ $haken->conterm }}か月）<br>
+                           （※契約開始日：{{ $haken->firstday ->format('Y年m月d日')}}）</br>
+                          稼働日はセガカレンダーに準拠します</span><br>
                         
-                        <h3 class="text-lg text-gray-700 font-semibold">５．費用</h3>
-                        <p>派遣費用：{{ $haken->worktype }}</p>
+                        <h4 class="text-lg text-gray-700 font-semibold">５．費用</h4>
+                        <span>派遣費用：{{ $haken->worktype }}<br>
                         @if($haken->worktype == '月額')
-                        <p>{{ $haken->worktype }}派遣費用：{{number_format($haken->cost)}}円(税抜)×{{ $haken->conterm }}か月</p>
+                          {{ $haken->worktype }}派遣費用：{{number_format($haken->cost)}}円(税抜)×{{ $haken->conterm }}か月<br>
                         @else
-                        <p>{{ $haken->worktype }}派遣費用：{{number_format($haken->cost)}}円(税抜)</p>
+                          {{ $haken->worktype }}派遣費用：{{number_format($haken->cost)}}円(税抜)<br>
                         @endif
                         
                         @if( $haken->worktype == '月額' )
-                        <p>派遣費用合計：{{number_format($haken->cost * $haken->conterm)}}円(税抜)</p><br>
+                          派遣費用合計：{{number_format($haken->cost * $haken->conterm)}}円(税抜)</span><br>
                         
                         @endif
                         
-                        <p>{{ $haken->body }}</p><br>
-                        <p>交通費(※出社の場合)</p>
+                        <span>{{ $haken->body }}
+                          交通費(※出社の場合)</span>
                         
                         @if($haken->tcostm == 0)
-                        <p>※派遣料に含まれます</p><br>
+                        <span>※派遣料に含まれます<br>
                         @else
-                        <p>月額：{{number_format($haken->tcostm)}}円×{{ $haken->conterm }}か月</p>
-                        <p>交通費合計：{{number_format($haken->tcostm * $haken->conterm)}}円</p><br>
+                          月額：{{number_format($haken->tcostm)}}円×{{ $haken->conterm }}か月<br>
+                          交通費合計：{{number_format($haken->tcostm * $haken->conterm)}}円</span><br>
                         @endif
                         
                         @php
@@ -95,17 +95,17 @@
                         @endphp
                         
                         @if($haken->worktype == "月額")
-                        <p>合計：{{ number_format($total) }}円（税込）</p><br>
+                        <span>合計：{{ number_format($total) }}円（税込）</span><br><br>
                         @else
-                        <p></p>
+                        <p></p><br><br>
                         @endif
                         
-                        <h3 class="text-lg text-gray-700 font-semibold">６．支払条件・支払予定日</h3>
-                        <p>毎月末締め翌月末日に請求書による支払い</p><br>
+                        <h4 class="text-lg text-gray-700 font-semibold">６．支払条件・支払予定日</h4>
+                        <span>毎月末締め翌月末日に請求書による支払い</span><br><br>
                         
-                        <h3 class="text-lg text-gray-700 font-semibold">７．特記事項</h3>
-                        <p>見積書を添付致しました。よろしくお願いいたします。</p><br>
-                        <p class="text-lg text-gray-700 font-semibold"></p><hr class="border-b-1 border-blue-600 w-full"><br>
+                        <h4 class="text-lg text-gray-700 font-semibold">７．特記事項</h4>
+                        <span>見積書を添付致しました。よろしくお願いいたします。</span><br>
+                        <span class="text-lg text-gray-700 font-semibold"></span><hr class="border-b-1 border-blue-600 w-full"><br>
                         
                         <p>1:<span class="font-bold text-xl text-blue-700">見積書</span>を添付する</p>
                         <p>2:関連申請に<span class="font-bold text-xl text-blue-700">１つ前の申請を紐づける</span></p>
