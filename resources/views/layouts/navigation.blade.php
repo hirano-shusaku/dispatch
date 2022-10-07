@@ -13,9 +13,7 @@
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
-                    </x-nav-link>
+                    
                     <x-nav-link :href="route('haken.index')" :active="request()->routeIs('haken.index')">
                         派遣一覧
                     </x-nav-link>
@@ -29,6 +27,14 @@
                     
                     <x-nav-link :href="route('haken.stop')" :active="request()->routeIs('haken.stop')">
                         <span class="text-red-700 bg-slate-200">削除（退職）派遣一覧</span>
+                    </x-nav-link>
+                    
+                    <x-nav-link :href="route('role.create')" :active="request()->routeIs('role.create')">
+                        役割登録
+                    </x-nav-link>
+                    
+                    <x-nav-link :href="route('role.index')" :active="request()->routeIs('role.index')">
+                        役割一覧
                     </x-nav-link>
                     
                     @can('admin')
@@ -86,12 +92,11 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                {{ __('Dashboard') }}
-            </x-responsive-nav-link>
+            
             <x-responsive-nav-link :href="route('haken.index')" :active="request()->routeIs('haken.index')">
                 派遣一覧
             </x-responsive-nav-link>
+            
             <x-responsive-nav-link :href="route('haken.create')" :active="request()->routeIs('haken.create')">
                 派遣新規入力
             </x-responsive-nav-link>
@@ -99,8 +104,17 @@
             <x-responsive-nav-link :href="route('profile.edit',auth()->user()->id )" :active="request()->routeIs('profile.edit')">
                 プロフィール変更
             </x-responsive-nav-link>
+            
             <x-responsive-nav-link :href="route('haken.stop')" :active="request()->routeIs('haken.stop')">
                 <span class="text-red-700 bg-slate-200">削除（退職）派遣一覧</span>
+            </x-responsive-nav-link>
+            
+            <x-responsive-nav-link :href="route('role.create')" :active="request()->routeIs('role.create')">
+                役割登録
+            </x-responsive-nav-link>
+            
+            <x-responsive-nav-link :href="route('role.index')" :active="request()->routeIs('haken.index')">
+                役割一覧
             </x-responsive-nav-link>
             
             @can('admin')

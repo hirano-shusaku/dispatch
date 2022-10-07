@@ -21,4 +21,32 @@ class RoleController extends Controller
         $user->roles()->detach($roleId);
         return back();
     }
+    
+    public function create()
+    {
+        return view('role.create');
+    }
+    
+    public function store(Request $request)
+    {
+        $inputs = $request->validate([
+            'name'=>'required|max:100'
+        ]);
+        
+        $roles = new Role();
+        $roles->name = $request->name;
+        //dd($roles);
+        $roles->save();
+        
+        return to_route('role.create')->with('message', 'データを保存しました');
+    }
+    
+    public function index()
+    {
+        $roles = Role::all();
+        $user = auth()->user();
+        
+        return view('role.index', compact('roles','user'));
+       
+    }
 }

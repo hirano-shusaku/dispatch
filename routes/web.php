@@ -21,9 +21,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('haken/stop', [HakenController::class, 'stop'])->name('haken.stop');
@@ -39,6 +39,9 @@ Route::middleware(['auth'])->group(function(){
     Route::get('profile/{user}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('profile/{user}', [ProfileController::class, 'update'])->name('profile.update');
     
+    Route::get('role/create', [RoleController::class, 'create'])->name('role.create');
+    Route::post('role', [RoleController::class, 'store'])->name('role.store');
+    Route::get('role', [RoleController::class, 'index'])->name('role.index');
     
     Route::middleware(['can:admin'])->group(function(){
         Route::get('profile/index', [ProfileController::class, 'index'])->name('profile.index');

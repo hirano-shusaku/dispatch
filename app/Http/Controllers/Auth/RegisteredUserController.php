@@ -61,7 +61,7 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
         
-        $user->roles()->attach(2);
+        $user->roles()->attach(1);
 
         Auth::login($user);
 
