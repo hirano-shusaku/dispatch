@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Haken;
 use Illuminate\Http\Request;
+use App\Http\Requests\HakenStoreRequest;
+use App\Http\Requests\HakenUpdateRequest;
 
 
 class HakenController extends Controller
@@ -37,50 +39,10 @@ class HakenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HakenStoreRequest $request)
     {
         //dd($request);
-        $inputs = $request->validate([
-            'name'=>'required|max:100',
-            'yomigana'=>'required|max:200',
-            'company'=>'required|max:100',
-            'number'=>'nullable|max:100',
-            'depart'=>'required|max:100',
-            'section'=>'required|max:100',
-            'job'=>'required|max:100',
-            'firstday'=>'nullable|date|different:endday',
-            'startday'=>'required|date|different:endday',
-            'endday'=>'required|date',
-            'worktype'=>'required|max:100',
-            'conterm'=>'required|numeric|between:0.5,9',
-            'cost'=>'required|integer|min:100',
-            'tcostm'=>'nullable|integer|min:1',
-            'tcostd'=>'nullable|integer|min:1',
-            'troute'=>'nullable|max:100',
-            'pnumber'=>'nullable|max:100',
-            'pname'=>'nullable|max:100',
-            'tcontent'=>'nullable|max:300',
-            'aname'=>'required|max:100',
-            'aemail'=>'required|email|max:100',
-            'body'=>'nullable|max:500',
-            'confirmer'=>'required|max:100',
-            'cemail'=>'required|email|max:100',
-            'costmemo'=>'nullable|max:500',
-            'circulator1'=>'nullable|max:100',
-            'circulator2'=>'nullable|max:100',
-            'circulator3'=>'nullable|max:100',
-            'circulator4'=>'nullable|max:100',
-            'sccmail1'=>'nullable|email|max:100',
-            'sccmail2'=>'nullable|email|max:100',
-            'sccmail3'=>'nullable|email|max:100',
-            'sccmail4'=>'nullable|email|max:100',
-            'sccmail5'=>'nullable|email|max:100',
-            'hccmail1'=>'nullable|email|max:100',
-            'hccmail2'=>'nullable|email|max:100',
-            'hccmail3'=>'nullable|email|max:100',
-            'hccmail4'=>'nullable|email|max:100',
-            'hccmail5'=>'nullable|email|max:100',
-        ]);
+        $inputs = $request->validated();
         
         $haken = new Haken();
         $haken->name = $request->name;
@@ -158,49 +120,9 @@ class HakenController extends Controller
      * @param  \App\Models\Haken  $haken
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Haken $haken)
+    public function update(HakenUpdateRequest $request, Haken $haken)
     {
-        $inputs = $request->validate([
-            'name'=>'required|max:100',
-            'yomigana'=>'required|max:200',
-            'company'=>'required|max:100',
-            'number'=>'nullable|max:100',
-            'depart'=>'required|max:100',
-            'section'=>'required|max:100',
-            'job'=>'required|max:100',
-            'firstday'=>'nullable|date|different:endday',
-            'startday'=>'required|date|different:endday',
-            'endday'=>'required|date',
-            'worktype'=>'required|max:100',
-            'conterm'=>'required|numeric|between:0.5,9',
-            'cost'=>'required|integer|min:100',
-            'tcostm'=>'nullable|integer|min:1',
-            'tcostd'=>'nullable|integer|min:1',
-            'troute'=>'nullable|max:100',
-            'pnumber'=>'nullable|max:100',
-            'pname'=>'nullable|max:100',
-            'tcontent'=>'nullable|max:300',
-            'aname'=>'required|max:100',
-            'aemail'=>'required|email|max:100',
-            'body'=>'nullable|max:500',
-            'confirmer'=>'required|max:100',
-            'cemail'=>'required|email|max:100',
-            'costmemo'=>'nullable|max:500',
-            'circulator1'=>'nullable|max:100',
-            'circulator2'=>'nullable|max:100',
-            'circulator3'=>'nullable|max:100',
-            'circulator4'=>'nullable|max:100',
-            'sccmail1'=>'nullable|email|max:100',
-            'sccmail2'=>'nullable|email|max:100',
-            'sccmail3'=>'nullable|email|max:100',
-            'sccmail4'=>'nullable|email|max:100',
-            'sccmail5'=>'nullable|email|max:100',
-            'hccmail1'=>'nullable|email|max:100',
-            'hccmail2'=>'nullable|email|max:100',
-            'hccmail3'=>'nullable|email|max:100',
-            'hccmail4'=>'nullable|email|max:100',
-            'hccmail5'=>'nullable|email|max:100'
-        ]);
+        $inputs = $request->validated();
         
         $haken->name = $request->name;
         $haken->yomigana = $request->yomigana;   
